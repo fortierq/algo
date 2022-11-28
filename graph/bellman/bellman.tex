@@ -1,0 +1,23 @@
+\documentclass[preview]{standalone}
+\usepackage{code}
+\usepackage{base}
+
+\begin{document}
+
+\SetKwFunction{min}{min}
+\begin{algo2}{Algorithme de Bellman-Ford}{10cm}
+    \Entree{$\vec{G} = (V, \vec{E})$ pondéré par $w$ et $s \in V$.}
+    \Sortie{$d$ tel que $d[v]$ soit la distance de $s$ à $v$.}
+    \;
+    $d[s] = 0$\;
+    \Pour{$v \in V - s$}{
+        $d[v] = \infty$
+    }\;
+    \Pour{$k \in \ent{0, n - 2}$}{
+        \Pour{$(u, v) \in \vec{E}$}{
+            $d[v] = \min(d[v], d[u] + w(u, v))$
+        }
+    }
+\end{algo2}
+
+\end{document}
