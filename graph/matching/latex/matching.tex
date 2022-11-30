@@ -1,0 +1,18 @@
+\documentclass[preview]{standalone}
+\usepackage{code}
+\usepackage{base}
+
+\begin{document}
+
+\SetKwFunction{min}{min}
+\begin{algo2}{Couplage maximum par chemin augmentant}{11cm}
+    \Entree{Graphe $G = (V, E)$}
+    \Sortie{Couplage maximum $M$ de $G$}
+    \;
+    $M \leftarrow \emptyset$\;
+    \TantQue{il existe un chemin $M$-augmentant $P$ dans $G$}{
+        $M \leftarrow M \Delta P$
+    }
+\end{algo2}
+
+\end{document}
